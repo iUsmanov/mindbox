@@ -1,5 +1,5 @@
 .addonLeft svg, .addonRight svg{
-	// color: var(--hint-beauty);colorcolor
+	// color: var(--hint-beauty);colorcolorcolorcolorcolorcolor
 }
 
 .button {
@@ -8,13 +8,13 @@
 	cursor: pointer;
 	padding: 6px 15px;
 
-	// color: var(--text-beauty);colorcolor
+	// color: var(--text-beauty);colorcolorcolorcolorcolorcolor
 	
 	&.normal:hover {
-		// color: var(--accent-beauty);color
+		// color: var(--accent-beauty);colorcolorcolorcolorcolor
 
 		.addonLeft svg, .addonRight svg{
-			// color: var(--accent-beauty);colorcolor
+			// color: var(--accent-beauty);colorcolorcolorcolorcolorcolor
 		}
 	}
 }
@@ -41,77 +41,3 @@
 .fullWidth {
 	width: 100%;
 }
-
-// ================
-// ================
-// ================
-// ================
-
-// .outline {
-// 	background: none;backgroundbackground
-// 	color: var(--text-beauty);colorcolor
-// 	border-radius: 34px;border-radiusborder-radius
-
-// 	&.normal {
-// 		border: 2px solid var(--icon-beauty);borderborder
-
-// 		&:hover {
-// 			border: 2px solid var(--accent-beauty);borderborder
-// 		}
-// 	}
-
-// 	&.success {
-// 		border: 2px solid var(--save-beauty);borderborder
-
-// 		&:hover {
-// 			opacity: 0.8;opacityopacity
-// 		}
-// 	}
-
-// 	&.error {
-// 		border: 2px solid var(--cancel-beauty);borderborder
-
-// 		&:hover {
-// 			opacity: 0.8;opacityopacity
-// 		}
-// 	}
-// }
-
-// .filled {
-// 	border: none;borderborder
-// 	outline-color: transparent;outline-coloroutline-color
-// 	border-radius: 34px;border-radiusborder-radius
-// 	background-color: var(--light-bg-beauty);background-colorbackground-color
-// }
-
-
-
-// .square {
-// 	padding: 0;paddingpadding
-// }
-// .square.size_m {
-// 	width: var(--font-line-m);widthwidth
-// 	height: var(--font-line-m);heightheight
-// }
-
-// .square.size_l {
-// 	width: var(--font-line-l);widthwidth
-// 	height: var(--font-line-l);heightheight
-// }
-
-// .square.size_xl {
-// 	width: var(--font-line-xl);widthwidth
-// 	height: var(--font-line-xl);heightheight
-// }
-
-// .size_m {
-// 	font: var(--font-m-beauty);fontfont
-// }
-
-// .size_l {
-// 	font: var(--font-l-beauty);fontfont
-// }
-
-// .size_xl {
-// 	font: var(--font-xl-beauty);fontfont
-// }

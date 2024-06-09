@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'size'>;
 type InputSize = 's' | 'm' | 'l';
 
-export interface InputBeautyProps extends HTMLInputProps {
+export interface InputProps extends HTMLInputProps {
 	className?: string;
 	placeholder?: string;
 	type?: string;
@@ -21,7 +21,7 @@ export interface InputBeautyProps extends HTMLInputProps {
 	size?: InputSize;
 }
 
-export const Input = memo((props: InputBeautyProps) => {
+export const Input = memo((props: InputProps) => {
 	const {
 		className,
 		placeholder,

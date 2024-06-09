@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 import cls from './Button.module.scss';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
-export interface ButtonBeautyProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	children: ReactNode;
 	variant?: ButtonVariant;
@@ -18,7 +18,7 @@ export type ButtonVariant = 'outline' | 'clear' | 'filled';
 export type ButtonColor = 'normal' | 'success' | 'error';
 export type ButtonSize = 'size_m' | 'size_l' | 'size_xl';
 
-export const Button = memo((props: ButtonBeautyProps) => {
+export const Button = memo((props: ButtonProps) => {
 	const {
 		className,
 		children,

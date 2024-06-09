@@ -10,7 +10,7 @@ export interface TabItem<T extends string> {
 	content: ReactNode;
 }
 
-export interface TabsBeautyProps<T extends string> extends TestProps {
+export interface TabsProps<T extends string> extends TestProps {
 	className?: string;
 	tabs: TabItem<T>[];
 	value: T;
@@ -18,7 +18,7 @@ export interface TabsBeautyProps<T extends string> extends TestProps {
 	direction?: FlexDirection;
 }
 
-export const Tabs = typedMemo(<T extends string>(props: TabsBeautyProps<T>) => {
+export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
 	const {
 		className,
 		tabs,

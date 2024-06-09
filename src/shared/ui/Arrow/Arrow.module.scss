@@ -1,0 +1,53 @@
+.arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background: none;
+}
+
+.obj {
+	width: 10px;
+	height: 10px;
+	border-left: 2px solid gray;
+	border-top: 2px solid gray;
+}
+
+.left {
+	transform: rotate(-45deg);
+}
+
+.right {
+	transform: rotate(135deg);
+}
+
+.top {
+	transform: rotate(45deg);
+}
+
+.bottom {
+	transform: rotate(-135deg) translateY(30%);
+}
+
+.size-s {
+	width: 8px;
+	height: 8px;
+	border-color: var(--slide-header-color);
+}
+
+.size-l {
+	width: 10px;
+	height: 10px;
+}
+
+.size-m {
+	width: 6px;
+	height: 6px;
+}
+
+.size-x {
+	width: 16px;
+	height: 16px;
+	border-left: 4px solid gray;
+	border-top: 4px solid gray;
+}
