@@ -25,10 +25,22 @@ export const TodosManager = memo((props: TodosManagerProps) => {
 				<HStack className={cls.addTodo} align='center'>
 					<Button variant='clear'>
 						<Arrow size='x' course='bottom' />
-						<Input onChange={onChangeNewTodo} value={newTodo} />
+						<Input
+							onChange={onChangeNewTodo}
+							value={newTodo}
+							size='x'
+							placeholder='What needs to be done?'
+							className={cls.addTodoInput}
+						/>
 					</Button>
 				</HStack>
+
+				<HStack className={cls.todo} align='center'>
+					<div className={cls.todoState}></div>
+					<div className={cls.todoText}></div>
+				</HStack>
 				<div className={cls.menu}></div>
+				{/* ========= */}
 				{/* ========= */}
 				<div className={cls.firstShadow}></div>
 				<div className={cls.secondShadow}></div>

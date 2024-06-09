@@ -4,7 +4,7 @@ import { HStack } from '../Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'size'>;
-type InputSize = 's' | 'm' | 'l';
+type InputSize = 's' | 'm' | 'l' | 'x';
 
 export interface InputProps extends HTMLInputProps {
 	className?: string;
