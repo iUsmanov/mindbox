@@ -1,0 +1,45 @@
+.todosManager {
+	width: 550px;
+	height: 450px;
+	background: rgb(248 241 241);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	color: rgb(211 179 179);
+	font-size: 100px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.todosPanel {
+	position: relative;
+	width: 94%;
+	background-color: #fff;
+	height: 70%;
+	box-shadow: 0 5px 10px rgb(248 242 242);
+}
+
+.firstShadow,
+.secondShadow {
+	position: absolute;
+	height: 4px;
+	background-color: #fff;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.firstShadow {
+	width: 99%;
+	z-index: 9;
+	bottom: -4px;
+	box-shadow: 0 5px 20px rgb(240 233 233);
+}
+
+.secondShadow {
+	z-index: 8;
+	width: 98%;
+	bottom: -8px;
+}

@@ -1,4 +1,3 @@
-// #i18next
 import { createRoot } from 'react-dom/client';
 import '@/app/styles/index.scss';
 import { RootLayout } from '@/app/components/RootLayout';

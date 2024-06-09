@@ -1,10 +1,6 @@
 import { memo } from 'react';
-import { ForceUpdateProvider } from '@/shared/render/ForceUpdateProvider/ForceUpdateProvider';
+import { TodosManager } from '@/widgets/todosManager';
 
 export const RootLayout = memo(() => {
-	return (
-		<ForceUpdateProvider>
-			<div>APP</div>
-		</ForceUpdateProvider>
-	);
+	return <TodosManager />;
 });
