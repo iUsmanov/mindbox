@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx lint-staged
+# npm run lint:ts
+# npm run lint:style
+# npm run pret:fix
+# npm run test:unit
+# npm run build:prod
+
+		# "**/*.{ts,tsx,js,json}": "prettier --write ",
+		# "**/*.{css,scss}": "stylelint",

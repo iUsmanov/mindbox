@@ -1,0 +1,6 @@
+node_modules
+/build
+.loki/report.html
+.loki/report.json
+/storybook-static
+/reports/jest
