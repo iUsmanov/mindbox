@@ -5,6 +5,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { Button } from '@/shared/ui/Button';
 import { Arrow } from '@/shared/ui/Arrow';
 import { Input } from '@/shared/ui/Input';
+import { Tick } from '@/shared/ui/Tick';
 
 interface TodosManagerProps {
 	className?: string;
@@ -36,8 +37,10 @@ export const TodosManager = memo((props: TodosManagerProps) => {
 				</HStack>
 
 				<HStack className={cls.todo} align='center'>
-					<div className={cls.todoState}></div>
-					<div className={cls.todoText}></div>
+					<Button variant='clear' className={cls.todoState}>
+						<Tick size='x' />
+					</Button>
+					<div className={cls.todoText}>Покормить кота</div>
 				</HStack>
 				<div className={cls.menu}></div>
 				{/* ========= */}
