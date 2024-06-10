@@ -8,6 +8,9 @@ import { TodosSort } from '../../model/types/todosManager';
 
 interface MenuProps {
 	className?: string;
+	todosSort: TodosSort;
+	onChangeTodosSort: (tab: TabItem<TodosSort>) => void;
+	leftTodosQuantity: number;
 }
 
 const tabs: TabItem<TodosSort>[] = [
@@ -26,16 +29,11 @@ const tabs: TabItem<TodosSort>[] = [
 ];
 
 export const Menu = memo((props: MenuProps) => {
-	const { className } = props;
-	const [todosSort, setTodosSort] = useState<TodosSort>('all');
-
-	const onChangeTodosSort = useCallback((tab: TabItem<TodosSort>) => {
-		setTodosSort(tab.value);
-	}, []);
+	const { className, todosSort, onChangeTodosSort, leftTodosQuantity } = props;
 
 	return (
 		<HStack className={cls.menu} justify='between' align='center'>
-			<div>9 items left</div>
+			<div>{leftTodosQuantity} items left</div>
 			<Tabs tabs={tabs} value={todosSort} onTabClick={onChangeTodosSort} />
 			<Button variant='clear' className={cls.clearButton}>
 				Clear completed

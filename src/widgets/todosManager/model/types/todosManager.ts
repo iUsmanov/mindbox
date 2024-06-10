@@ -1,6 +1,7 @@
 export interface TodosManager {}
 
 export interface Todo {
+	id: string;
 	isCompleted: boolean;
 	text: string;
 }
