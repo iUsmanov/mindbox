@@ -1,8 +1,16 @@
 .addTodo {
 	border-bottom: 2px solid rgb(248 241 241);
 	padding: 15px;
+	position: relative;
 }
 
 .addTodoInput {
 	margin-left: 15px;
+}
+
+.error {
+	color: red;
+	position: absolute;
+	font-size: 14px;
+	bottom: 6px;
 }
