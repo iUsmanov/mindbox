@@ -3,6 +3,7 @@ import cls from './TodosManager.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Task } from '../Task/Task';
 import { Todo, TodosSort } from '../../model/types/todosManager';
+import { initialTodos } from '../../model/consts/todosManager';
 import { AddTodo } from '../AddTodo/AddTodo';
 import { TabItem } from '@/shared/ui/Tabs';
 import { Menu } from '../Menu/Menu';
@@ -13,44 +14,12 @@ interface TodosManagerProps {
 	className?: string;
 }
 
-// const todoss: Todo[] = [
-// 	{ isCompleted: true, text: 'Cходить в магазин' },
-// 	{ isCompleted: true, text: 'Покормить кота' },
-// 	{ isCompleted: false, text: 'Пообедать' },
-// 	{ isCompleted: false, text: 'Купить телефон' },
-// 	{ isCompleted: false, text: 'Решить задачу' },
-// 	{ isCompleted: true, text: 'Устроиться на работу' },
-// 	{ isCompleted: false, text: 'Получить зарплату' },
-// 	{ isCompleted: true, text: 'Lorem ipsum' },
-// 	{ isCompleted: false, text: 'Ipsum lorem' },
-// ];
-
 export const TodosManager = memo((props: TodosManagerProps) => {
 	const { className } = props;
-	const [todos, setTodos] = useState<Record<string, Todo>>({
-		'1': { id: '1', isCompleted: true, text: 'Cходить в магазин' },
-		'2': { id: '2', isCompleted: true, text: 'Покормить кота' },
-		'3': { id: '3', isCompleted: false, text: 'Пообедать' },
-		'4': { id: '4', isCompleted: false, text: 'Купить телефон' },
-		'5': { id: '5', isCompleted: false, text: 'Решить задачу' },
-		'6': { id: '6', isCompleted: true, text: 'Устроиться на работу' },
-		'7': { id: '7', isCompleted: false, text: 'Получить зарплату' },
-		'8': { id: '8', isCompleted: true, text: 'Lorem ipsum' },
-		'9': { id: '9', isCompleted: false, text: 'Ipsum lorem' },
-	});
-	const [allTodosIds, setAllTodosIds] = useState<string[]>([
-		'1',
-		'2',
-		'3',
-		'4',
-		'5',
-		'6',
-		'7',
-		'8',
-		'9',
-	]);
+	const [todos, setTodos] = useState<Record<string, Todo>>({ ...initialTodos });
+	const [allTodosIds, setAllTodosIds] = useState<string[]>(['1', '2', '3', '4', '5', '6', '7', '8']);
 	const [completedTodosIds, setCompletedTodosIds] = useState<string[]>(['1', '2', '6', '8']);
-	const [noCompletedTodosIds, setNoCompletedTodosIds] = useState<string[]>(['3', '4', '5', '7', '9']);
+	const [noCompletedTodosIds, setNoCompletedTodosIds] = useState<string[]>(['3', '4', '5', '7']);
 	const [todosSort, setTodosSort] = useState<TodosSort>('all');
 
 	const currentTodosIds = useMemo(() => {
@@ -135,12 +104,20 @@ export const TodosManager = memo((props: TodosManagerProps) => {
 				<div className={cls.todosPanel}>
 					<AddTodo addNewTodo={addNewTodo} />
 					<div className={cls.todos}>
-						{currentTodosIds[todosSort].map((todoId) => {
-							const todo = todos[todoId];
-							return (
-								<Task todo={todo} key={todo.id} onToggleTodoComplete={onToggleTodoComplete} />
-							);
-						})}
+						{currentTodosIds[todosSort].length ? (
+							currentTodosIds[todosSort].map((todoId) => {
+								const todo = todos[todoId];
+								return (
+									<Task
+										todo={todo}
+										key={todo.id}
+										onToggleTodoComplete={onToggleTodoComplete}
+									/>
+								);
+							})
+						) : (
+							<div className={cls.hereIsNoTodos}>Here is no todos</div>
+						)}
 					</div>
 					<Menu
 						todosSort={todosSort}
