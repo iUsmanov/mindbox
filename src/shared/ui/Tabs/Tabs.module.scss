@@ -1,7 +1,9 @@
 .tab {
 	cursor: pointer;
+	padding: 6px 10px;
 }
 
 .selected {
-	padding: 8px 16px;
+	border: 1px solid rgb(248 241 241);
+	border-radius: 3px;
 }
