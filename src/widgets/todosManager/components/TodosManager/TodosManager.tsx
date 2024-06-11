@@ -54,48 +54,21 @@ export const TodosManager = memo((props: TodosManagerProps) => {
 				setNoCompletedTodosIds((prev) => prev.filter((item) => item !== id));
 				setCompletedTodosIds((prev) => [...prev, id]);
 			}
-			console.log(todos);
-			console.log(completedTodosIds);
-			console.log(noCompletedTodosIds);
-			console.log('===================');
 		},
-		[completedTodosIds, noCompletedTodosIds, todos]
+		[todos]
 	);
 
-	// const onClearCompleted = useCallback(() => {
-	// 	const tds = { ...todos };
-	// 	const allTdsIds = [...allTodosIds];
-	// 	completedTodosIds.forEach((id) => {
-	// 		delete tds[id];
-	// 		const indexOfId = allTdsIds.indexOf(id);
-	// 		allTdsIds.splice(indexOfId, 1);
-	// 	});
-	// 	setTodos(tds);
-	// 	setAllTodosIds(allTdsIds);
-	// 	setCompletedTodosIds([]);
-	// }, []);
-
 	const onClearCompleted = useCallback(() => {
-		completedTodosIds.forEach((id) => {
-			console.log(id);
-			setTodos((prev) => {
-				const result: Record<string, Todo> = {};
-				for (const key in prev) {
-					if (key !== id) {
-						result[key] = prev[key];
-					}
-				}
-
-				return result;
+		setAllTodosIds((prev) => prev.deleteItems(completedTodosIds));
+		setTodos((prev) => {
+			completedTodosIds.forEach((id) => {
+				delete prev[id];
 			});
 
-			const indexOfId = allTodosIds.indexOf(id);
-			setAllTodosIds((prev) => {
-				return prev.slice(0, indexOfId - 1).concat(prev.slice(indexOfId));
-			});
+			return prev;
 		});
 		setCompletedTodosIds([]);
-	}, [allTodosIds, completedTodosIds]);
+	}, [completedTodosIds]);
 
 	return (
 		<HStack justify='center' align='center' className={classNames(cls.wrapper, {}, [])}>

@@ -21,7 +21,7 @@ declare const __ENVIRON__: string;
 type DeepPartial<T> = T extends object
 	? {
 			[P in keyof T]?: DeepPartial<T[P]>;
-	  }
+		}
 	: T;
 
 type OptionalRecord<K extends keyof any, T> = {
@@ -30,4 +30,9 @@ type OptionalRecord<K extends keyof any, T> = {
 
 declare namespace React {
 	function lazy<T extends ComponentType<any>>(factory: () => Promise<{ default: T }>): T;
+}
+
+interface Array<T> {
+	deleteByIndex: (index: number) => T[];
+	deleteItems: (items: T[]) => T[];
 }
