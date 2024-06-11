@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import cls from './AddTodo.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -24,12 +24,26 @@ export const AddTodo = memo((props: AddTodoProps) => {
 	const addNewTodoAndClean = useCallback(() => {
 		if (newTodo.length > maxTodoLength) {
 			setIsLengthLimited(true);
-		} else {
+		} else if (newTodo.length) {
 			addNewTodo(newTodo);
 			setNewTodo('');
 			setIsLengthLimited(false);
 		}
 	}, [addNewTodo, newTodo]);
+
+	useEffect(() => {
+		const handleClick = (event: KeyboardEvent) => {
+			if (event.code === 'Enter') {
+				addNewTodoAndClean();
+			}
+		};
+
+		document.addEventListener('keydown', handleClick);
+
+		return () => {
+			document.removeEventListener('keydown', handleClick);
+		};
+	}, [addNewTodoAndClean]);
 
 	return (
 		<HStack className={classNames(cls.addTodo, {}, [className])} align='center'>
