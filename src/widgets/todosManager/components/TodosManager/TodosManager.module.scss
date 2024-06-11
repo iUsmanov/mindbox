@@ -5,7 +5,7 @@
 .todosManager {
 	width: 550px;
 	height: 650px;
-	background: rgb(248 241 241);
+	background: var(--main-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -23,7 +23,7 @@
 	width: 94%;
 	background-color: #fff;
 	height: 70%;
-	box-shadow: 0 5px 10px rgb(248 242 242);
+	box-shadow: 0 5px 10px var(--main-color);
 }
 
 .firstShadow,
@@ -33,13 +33,13 @@
 	background-color: #fff;
 	left: 50%;
 	transform: translateX(-50%);
+	box-shadow: 0 10px 20px var(--main-color);
 }
 
 .firstShadow {
 	width: 99%;
 	z-index: 9;
 	bottom: -4px;
-	box-shadow: 0 5px 20px rgb(240 233 233);
 }
 
 .secondShadow {
@@ -51,7 +51,7 @@
 .todos {
 	height: 330px;
 	overflow: auto;
-	border-bottom: 1px solid rgb(248 241 241);
+	border-bottom: 1px solid var(--main-color);
 }
 
 .hereIsNoTodos {
