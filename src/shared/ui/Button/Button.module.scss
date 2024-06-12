@@ -1,22 +1,9 @@
-.addonLeft svg, .addonRight svg{
-	// color: var(--hint-beauty);colorcolorcolorcolorcolorcolorcolor
-}
-
 .button {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 	padding: 6px 15px;
 
-	// color: var(--text-beauty);colorcolorcolorcolorcolorcolorcolor
-	
-	&.normal:hover {
-		// color: var(--accent-beauty);colorcolorcolorcolorcolorcolor
-
-		.addonLeft svg, .addonRight svg{
-			// color: var(--accent-beauty);colorcolorcolorcolorcolorcolorcolor
-		}
-	}
 }
 
 .button:disabled {
@@ -25,8 +12,6 @@
 
 .clear {
 	padding: 0;
-
-	// border: none;border
 	background-color: transparent;
 	outline-color: transparent;
 }
