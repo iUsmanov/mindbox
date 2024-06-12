@@ -1,1 +1,0 @@
-export { mockTabs } from './mocks';

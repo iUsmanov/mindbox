@@ -19,9 +19,19 @@ export const Menu = memo((props: MenuProps) => {
 	const { className, todosSort, onChangeTodosSort, leftTodosQuantity, onClearCompleted } = props;
 
 	return (
-		<HStack className={classNames(cls.menu, {}, [className])} justify='between' align='center'>
+		<HStack
+			className={classNames(cls.menu, {}, [className])}
+			justify='between'
+			align='center'
+			data-testid='TodosMenu'
+		>
 			<div>{leftTodosQuantity} items left</div>
-			<Tabs tabs={todosSortTabs} value={todosSort} onTabClick={onChangeTodosSort} />
+			<Tabs
+				tabs={todosSortTabs}
+				value={todosSort}
+				onTabClick={onChangeTodosSort}
+				data-testid='TodosTabs'
+			/>
 			<Button variant='clear' className={cls.clearButton} onClick={onClearCompleted}>
 				Clear completed
 			</Button>

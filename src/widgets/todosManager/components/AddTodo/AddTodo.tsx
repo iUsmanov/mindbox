@@ -46,8 +46,12 @@ export const AddTodo = memo((props: AddTodoProps) => {
 	}, [addNewTodoAndClean]);
 
 	return (
-		<HStack className={classNames(cls.addTodo, {}, [className])} align='center'>
-			<Button variant='clear' onClick={addNewTodoAndClean}>
+		<HStack
+			className={classNames(cls.addTodo, {}, [className])}
+			align='center'
+			data-testid={'AddTodo'}
+		>
+			<Button variant='clear' onClick={addNewTodoAndClean} data-testid={'addNewTodoAndClean'}>
 				<Arrow size='x' course='bottom' />
 			</Button>
 			<VStack max gap='8'>
@@ -57,6 +61,7 @@ export const AddTodo = memo((props: AddTodoProps) => {
 					size='x'
 					placeholder='What needs to be done?'
 					className={cls.addTodoInput}
+					data-testid={'addTodoInput'}
 				/>
 				{isLengthLimited && (
 					<div className={cls.error}>

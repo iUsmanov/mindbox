@@ -18,11 +18,13 @@ export const Task = memo((props: TaskProps) => {
 		<HStack
 			className={classNames(cls.todo, { [cls.isCompleted]: todo.isCompleted }, [className])}
 			align='center'
+			data-testid='Task'
 		>
 			<Button
 				variant='clear'
 				className={cls.todoState}
 				onClick={() => onToggleTodoComplete(todo.id)}
+				data-testid='onToggleTodoComplete'
 			>
 				{todo.isCompleted && <Tick size='x' />}
 			</Button>
