@@ -70,8 +70,6 @@ export const TodosManager = memo((props: TodosManagerProps) => {
 		setCompletedTodosIds([]);
 	}, [completedTodosIds]);
 
-	// Не забывайте про README.md
-
 	return (
 		<HStack justify='center' align='center' className={classNames(cls.wrapper, {}, [])}>
 			<div className={classNames(cls.todosManager, {}, [className])}>
